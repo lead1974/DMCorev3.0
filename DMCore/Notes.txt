@@ -1,0 +1,17 @@
+﻿1. Add Class Library (.NET CORE) for each DataAccess, Models, Utility
+2. For Hot Refresh add new package: 
+   Microsoft.ASPNetCore.MVC.Razor.RunTimeCompilation 
+   add in Startup.cs:  services.AddRazorPages().AddRazorRuntimeCompilation();
+3. Install Microsoft.ASpNetCore.MVC in DataAceess and Models cuz we need SelectedItem list to be defined and used 
+4. Install Stripe.net in DMCore and DMCore.DataAccess
+
+5. GitHub
+   a. Open Command Prompt cd C:\Andrey\WebApps\DM\DMCore
+      git config core.autocrlf false to remove warning : warning: LF will be replaced by CRLF 
+   b. remove current git files: C:\Andrey\WebApps\DM\DMCore>rd .git /S/Q
+   c. initiate git : C:\Andrey\WebApps\DMCore>git init
+   c. Add .gitignore to C:\Andrey\WebApps\DM\DMCore (manually)
+   d. add everything to local repository: C:\Andrey\WebApps\DM\DMCore>git add .
+   e. commit all first time: C:\Andrey\WebApps\DM\DMCore>git commit -m "My First Commit"
+   f. sync with remote git repository: C:\Andrey\WebApps\DM\DMCore>git remote add origin https://github.com/lead1974/DMCore.git
+   g. push an existing local repository to remote repository: git push -u origin master

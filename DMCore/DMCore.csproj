@@ -1,0 +1,31 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.0</TargetFramework>
+    <UserSecretsId>aspnet-DMCore-894E3FC2-05EE-4A06-9056-19D2D777ADE5</UserSecretsId>
+  </PropertyGroup>
+
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore" Version="3.0.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="3.0.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Identity.UI" Version="3.0.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation" Version="3.0.0" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="3.0.0" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="3.0.0" />
+    <PackageReference Include="Stripe.net" Version="29.6.0" />
+  </ItemGroup>
+
+
+  <ItemGroup>
+    <Folder Include="Controllers\" />
+    <Folder Include="wwwroot\images\" />
+  </ItemGroup>
+
+
+  <ItemGroup>
+    <ProjectReference Include="..\DMCore.DataAccess\DMCore.DataAccess.csproj" />
+    <ProjectReference Include="..\DMCore.Models\DMCore.Models.csproj" />
+  </ItemGroup>
+
+</Project>
