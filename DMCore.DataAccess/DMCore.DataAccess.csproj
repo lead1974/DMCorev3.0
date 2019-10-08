@@ -12,12 +12,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Data\Initializer\" />
-    <Folder Include="Data\Repository\IRepository\" />
-    <Folder Include="Migrations\" />
-  </ItemGroup>
-
-  <ItemGroup>
     <ProjectReference Include="..\DMCore.Models\DMCore.Models.csproj" />
     <ProjectReference Include="..\DMCore.Utility\DMCore.Utility.csproj" />
   </ItemGroup>

@@ -9,9 +9,13 @@
    a. Open Command Prompt cd C:\Andrey\WebApps\DM\DMCore
       git config core.autocrlf false to remove warning : warning: LF will be replaced by CRLF 
    b. remove current git files: C:\Andrey\WebApps\DM\DMCore>rd .git /S/Q
-   c. initiate git : C:\Andrey\WebApps\DMCore>git init
+   c. initiate git : C:\Andrey\WebApps\DM\DMCore>git init
    c. Add .gitignore to C:\Andrey\WebApps\DM\DMCore (manually)
    d. add everything to local repository: C:\Andrey\WebApps\DM\DMCore>git add .
    e. commit all first time: C:\Andrey\WebApps\DM\DMCore>git commit -m "My First Commit"
-   f. sync with remote git repository: C:\Andrey\WebApps\DM\DMCore>git remote add origin https://github.com/lead1974/DMCore.git
+   f. sync with remote git repository: C:\Andrey\WebApps\DM\DMCore>git remote add origin https://github.com/lead1974/DMCorev3.0.git
    g. push an existing local repository to remote repository: git push -u origin master
+
+6. After Setting up Repository for DealCategory open Package Manager and run:
+   a. add-migration AddIdentityAndCategory
+   b. update-database
