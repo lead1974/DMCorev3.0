@@ -3,13 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.29319.158
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DMCore", "DMCore\DMCore.csproj", "{BAC93C21-809A-422A-A6D1-D092E810B514}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DMCore", "DMCore\DMCore.csproj", "{BAC93C21-809A-422A-A6D1-D092E810B514}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DMCore.DataAccess", "DMCore.DataAccess\DMCore.DataAccess.csproj", "{DC1A6433-F0FE-4B13-9703-FA67CB023F92}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DMCore.DataAccess", "DMCore.DataAccess\DMCore.DataAccess.csproj", "{DC1A6433-F0FE-4B13-9703-FA67CB023F92}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DMCore.Models", "DMCore.Models\DMCore.Models.csproj", "{C0BEC678-E1F3-41CE-914E-594C674621C3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DMCore.Models", "DMCore.Models\DMCore.Models.csproj", "{C0BEC678-E1F3-41CE-914E-594C674621C3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DMCore.Utility", "DMCore.Utility\DMCore.Utility.csproj", "{B96F994C-F5DB-4E06-9E29-B404BE93A1A0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DMCore.Utility", "DMCore.Utility\DMCore.Utility.csproj", "{B96F994C-F5DB-4E06-9E29-B404BE93A1A0}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

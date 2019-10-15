@@ -10,6 +10,7 @@ using Microsoft.Extensions.Hosting;
 using DMCore.DataAccess.Data.Repository;
 using DMCore.DataAccess.Data.Repository.IRepository;
 using DMCore.DataAccess.Data.Initializer;
+using DMCore.Utility.Services;
 
 namespace DMCore
 {
@@ -28,8 +29,13 @@ namespace DMCore
             services.AddDbContext<ApplicationDbContext>(options =>
                 options.UseSqlServer(
                     Configuration.GetConnectionString("DMConnection")));
-            services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
-                .AddEntityFrameworkStores<ApplicationDbContext>();
+
+            //services.AddIdentity<IdentityUser, IdentityRole>()
+            //        .AddDefaultTokenProviders()
+            //        .AddEntityFrameworkStores<ApplicationDbContext>();
+
+            //services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
+            //    .AddEntityFrameworkStores<ApplicationDbContext>();
 
             services.AddIdentity<IdentityUser, IdentityRole>(options =>
             {
@@ -41,9 +47,10 @@ namespace DMCore
                 options.Password.RequireUppercase = false;
                 options.SignIn.RequireConfirmedEmail = true;
             })
-            .AddDefaultTokenProviders()
+            //.AddDefaultTokenProviders()
             .AddEntityFrameworkStores<ApplicationDbContext>();
 
+            services.AddSingleton<IEmailSender, EmailSender>();
             services.AddScoped<IUnitOfWork, UnitOfWork>();
             services.AddScoped<IDbInitializer, DbInitializer>();
 
@@ -54,12 +61,25 @@ namespace DMCore
                 options.Cookie.IsEssential = true;
             });
 
-            services.AddRazorPages().AddRazorRuntimeCompilation();
+            services.Configure<EmailSettings>(Configuration.GetSection("EmailSettings"));
+
+            services.AddRazorPages();//.AddRazorRuntimeCompilation();
             services.AddControllersWithViews().AddRazorRuntimeCompilation();
+            //services.AddAuthentication().AddFacebook(facebookOptions =>
+            //{
+            //    facebookOptions.AppId = "2481959558526884";
+            //    facebookOptions.AppSecret = "25afe44c4799c1c91dd02bfd4433cc7d";
+            //});
+
+            //services.AddAuthentication().AddMicrosoftAccount(options =>
+            //{
+            //    options.ClientId = "708aabec-01ae-4674-af5b-a2605b0ac2df";
+            //    options.ClientSecret = "_BPXHMsO-A++jOfPks1cgsKjmey65r9H";
+            //});
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
+        public void Configure(IApplicationBuilder app, IWebHostEnvironment env, IDbInitializer dbInitializer)
         {
             if (env.IsDevelopment())
             {
@@ -76,7 +96,7 @@ namespace DMCore
             app.UseHttpsRedirection();
             app.UseStaticFiles();
             app.UseSession();
-            //dbInitializer.Initialize();
+            dbInitializer.Initialize();
 
             app.UseRouting();
 

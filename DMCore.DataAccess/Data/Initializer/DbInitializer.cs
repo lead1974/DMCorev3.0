@@ -52,6 +52,7 @@ namespace DMCore.DataAccess.Data.Initializer
 
             if (_db.Roles.Any(r => r.Name == SD.AdminRole)) return;
 
+            _roleManager.CreateAsync(new IdentityRole(SD.AdminRole)).GetAwaiter().GetResult();
             _roleManager.CreateAsync(new IdentityRole(SD.DealManagerRole)).GetAwaiter().GetResult();
             _roleManager.CreateAsync(new IdentityRole(SD.BlogManagerRole)).GetAwaiter().GetResult();
             _roleManager.CreateAsync(new IdentityRole(SD.UserL1Role)).GetAwaiter().GetResult();
