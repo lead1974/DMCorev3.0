@@ -1,20 +1,4 @@
 ﻿/*@import url(https://fonts.googleapis.com/css?family=Roboto:400,700,300);*/
-
-.clearfix {
-    *zoom: 1;
-}
-
-.clearfix:before,
-.clearfix:after {
-    display: table;
-    content: "";
-    line-height: 0;
-}
-
-.clearfix:after {
-    clear: both;
-}
-
 html {
     height: 100%;
 }
@@ -534,7 +518,7 @@ a:focus {
 }
 
 .portfolio-items.col-3 > li {
-    width: 63%;
+    width: 33%;
 }
 
 .portfolio-items.col-4 > li {
@@ -1296,4 +1280,17 @@ ul.faq {
     text-align: center;
     margin-top: 150px;
     margin-bottom: 150px;
+}
+
+.btn {
+    margin-bottom: 3px;
+}
+
+    .btn:hover {
+        cursor: pointer;
+    }
+
+.btn-outline-primary:focus {
+    background-color: #007bff;
+    color: #fff;
 }

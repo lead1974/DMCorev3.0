@@ -6,5 +6,85 @@
 
 <div class="text-center">
     <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
 </div>
+
+<div class="container">
+    <div class="row">
+        <div class="col-8">
+            <div class="row">
+                    <div class="col-sm" style="border:2px solid #008cba; border-radius: 5px; margin:0.3em;padding:0.3em;">
+                        <img src="~/images/portfolio/thumb/item1.jpg" class="card-img-top p-2 rounded" />
+                        <a asp-page="Details" class="btn btn-primary" style="border-radius:2px;width:10em;">Deals</a>
+                    </div>
+                    <div class="col-sm" style="border:2px solid #008cba; border-radius: 5px; margin:0.3em;padding:0.3em;">
+                        <img src="~/images/portfolio/thumb/item3.jpg" class="card-img-top p-2 rounded" />
+                        <a asp-page="Details" class="btn btn-primary" style="border-radius:2px;width:10em;">Deal Categories</a>
+                    </div>
+                    <div class="col-sm" style="border:2px solid #008cba; border-radius: 5px; margin:0.3em;padding:0.3em;">
+                        <img src="~/images/portfolio/thumb/item6.jpg" class="card-img-top p-2 rounded" />
+                        <a asp-page="Details" class="btn btn-primary" style="border-radius:2px;width:10em;">Blog Posts</a>
+                    </div>
+                    <div class="col-sm" style="border:2px solid #008cba; border-radius: 5px; margin:0.3em;padding:0.3em;">
+                        <img src="~/images/portfolio/thumb/item6.jpg" class="card-img-top p-2 rounded" />
+                        <a asp-page="Details" class="btn btn-primary" style="border-radius:2px;width:10em;">Blog Categories</a>
+                    </div>
+                    <div class="col-sm" style="border:2px solid #008cba; border-radius: 5px; margin:0.3em;padding:0.3em;">
+                        <img src="~/images/portfolio/thumb/item6.jpg" class="card-img-top p-2 rounded" />
+                        <a asp-page="Details" class="btn btn-primary" style="border-radius:2px;width:10em;">Stores</a>
+                    </div>
+                    <div class="col-sm" style="border:2px solid #008cba; border-radius: 5px; margin:0.3em;padding:0.3em;">
+                        <img src="~/images/portfolio/thumb/item6.jpg" class="card-img-top p-2 rounded" />
+                        <a asp-page="Details" class="btn btn-primary" style="border-radius:2px;width:10em;">Users</a>
+                    </div>
+                    <div class="col-sm" style="border:2px solid #008cba; border-radius: 5px; margin:0.3em;padding:0.3em;">
+                        <img src="~/images/portfolio/thumb/item6.jpg" class="card-img-top p-2 rounded" />
+                        <a asp-page="Details" class="btn btn-primary" style="border-radius:2px;width:10em;">Roles</a>
+                    </div>
+                    <div class="col-sm" style="border:2px solid #008cba; border-radius: 5px; margin:0.3em;padding:0.3em;">
+                        <img src="~/images/portfolio/thumb/item6.jpg" class="card-img-top p-2 rounded" />
+                        <a asp-page="Details" class="btn btn-primary" style="border-radius:2px;width:10em;">Roles</a>
+                    </div>
+            </div>
+        </div>
+        <div class="col-4">
+            <div class="col-md" style="border:2px solid #008cba; border-radius: 5px; margin:0.3em;padding:0.3em;">
+                <img src="~/images/portfolio/thumb/item6.jpg" class="card-img-top p-2 rounded" />
+                <a asp-page="Details" class="btn btn-primary" style="border-radius:2px;">Other stuff</a>
+            </div>
+            <div class="col-md" style="border:2px solid #008cba; border-radius: 5px; margin:0.3em;padding:0.3em;">
+                <img src="~/images/portfolio/thumb/item6.jpg" class="card-img-top p-2 rounded" />
+                <a asp-page="Details" class="btn btn-primary" style="border-radius:2px;">Other stuff</a>
+            </div>
+        </div>
+        </div>
+</div>
+@*<ul class="list-group list-group-horizontal flex-sm-row" style="list-style-type: none;display: flex;flex-wrap: wrap;text-align: center;">
+        <li class="list-group-item deals" style="border:2px solid #008cba; border-radius: 5px; margin:0.3em;padding:0.3em;width:20%;">
+            <img src="~/images/portfolio/thumb/item1.jpg" class="card-img-top p-2 rounded" />
+            <a asp-page="Details" class="btn btn-primary" style="border-radius:2px;">Deals</a>
+        </li>
+        <li class="list-group-item deals" style="border:2px solid #008cba; border-radius: 5px; margin:0.3em;padding:0.3em;width:20%;">
+            <img src="~/images/portfolio/thumb/item3.jpg" class="card-img-top p-2 rounded" />
+            <a asp-page="Details" class="btn btn-primary" style="border-radius:2px;" >Deal Categories</a>
+        </li>
+        <li class="list-group-item posts" style="border:2px solid #008cba; border-radius: 5px; margin:0.3em;padding:0.3em;width:20%;">
+            <img src="~/images/portfolio/thumb/item6.jpg" class="card-img-top p-2 rounded" />
+            <a asp-page="Details" class="btn btn-primary" style="border-radius:2px;">Blog Posts</a>
+        </li>
+        <li class="list-group-item posts" style="border:2px solid #008cba; border-radius: 5px; margin:0.3em;padding:0.3em;width:20%;">
+            <img src="~/images/portfolio/thumb/item6.jpg" class="card-img-top p-2 rounded" />
+            <a asp-page="Details" class="btn btn-primary" style="border-radius:2px;" >Blog Categories</a>
+        </li>
+        <li class="list-group-item stores" style="border:2px solid #008cba; border-radius: 5px; margin:0.3em;padding:0.3em;width:20%;">
+            <img src="~/images/portfolio/thumb/item6.jpg" class="card-img-top p-2 rounded" />
+            <a asp-page="Details" class="btn btn-primary" style="border-radius:2px;" >Stores</a>
+        </li>
+        <li class="list-group-item users" style="border:2px solid #008cba; border-radius: 5px; margin:0.3em;padding:0.3em;width:20%;">
+            <img src="~/images/portfolio/thumb/item6.jpg" class="card-img-top p-2 rounded" />
+            <a asp-page="Details" class="btn btn-primary" style="border-radius:2px;" >Users</a>
+        </li>
+        <li class="list-group-item users" style="border:2px solid #008cba; border-radius: 5px; margin:0.3em;padding:0.3em;width:20%;">
+            <img src="~/images/portfolio/thumb/item6.jpg" class="card-img-top p-2 rounded" />
+            <a asp-page="Details" class="btn btn-primary" style="border-radius:2px;" >Roles</a>
+        </li>
+    </ul>*@

@@ -1,97 +1,219 @@
 ﻿@page "/Admin"
-
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
 @model DMCore.Areas.Admin.Pages.IndexModel
 @{
     Layout = "~/Pages/Shared/_Layout.cshtml";
 }
 
-<ul class="portfolio-filter">
-    <li><a class="btn btn-default active" href="#" data-filter="*">Manage All</a></li>
-    <li><a class="btn btn-default" href="#" data-filter=".deals">Manage Deals</a></li>
-    <li><a class="btn btn-default" href="#" data-filter=".stores">Manage Stores</a></li>
-    <li><a class="btn btn-default" href="#" data-filter=".posts">Manage Blog Posts</a></li>
-    <li><a class="btn btn-default" href="#" data-filter=".users">Manage Users and Roles</a></li>
-</ul><!--/#portfolio-filter-->
-<ul class="portfolio-items col-3">
-    <li class="portfolio-item deals">
-        <div class="item-inner">
-            <img src="images/portfolio/thumb/item5.jpg" alt="">
-            <h5>Deals</h5>
-            <div class="overlay">
-                <a href="/Admin/Deals"><i class="icon-eye-open"></i><img src="~/images/portfolio/thumb/item5.jpg" alt="Deals" /></a>
+<!-- Dont remove id filters -->
+<div id="filters" class="container-fluid mb-5 mt-4 button-group filter-button-group">
+    <button class="btn btn-outline-primary active" aria-pressed="true" data-filter="*">Manage All</button>
+    <button class="btn btn-outline-primary" data-filter=".deals">Manage Deals</button>
+    <button class="btn btn-outline-primary" data-filter=".blog">Manage Blog</button>
+    <button class="btn btn-outline-primary" data-filter=".stores">Manage Stores</button>
+    <button class="btn btn-outline-primary" data-filter=".users">Manage Users and Roles</button>
+</div>
+
+<!--  Dont remove class grid -->
+<div class="grid" style="text-align: center;">
+
+    <!--  Dont remove class container -->
+    <!--  use the data-category always together in the class  -->
+    <div class="element-item deals" data-category="deals" style="border:2px solid #008cba; border-radius: 5px; margin:0.3em;padding:0.3em;">
+        <h5>Deals</h5>
+        <a asp-page="Details" style="border-radius:2px;"><img src="~/images/portfolio/thumb/item1.jpg" class="w-100 h-100" /></a>
+    </div>
+    <div class="element-item deals" data-category="deals" style="border:2px solid #008cba; border-radius: 5px; margin:0.3em;padding:0.3em;">
+        <h5>Deal Categories</h5>
+        <a asp-page="Details" style="border-radius:2px;"><img src="~/images/portfolio/thumb/item2.jpg" class="w-100 h-100" /></a>
+    </div>
+    <div class="element-item deals" data-category="deals" style="border:2px solid #008cba; border-radius: 5px; margin:0.3em;padding:0.3em;">
+        <h5>Deal Tags</h5>
+        <a asp-page="Details" style="border-radius:2px;"><img src="~/images/portfolio/thumb/item2.jpg" class="w-100 h-100" /></a>
+    </div>
+    <div class="element-item blog" data-category="blog" style="border:2px solid #008cba; border-radius: 5px; margin:0.3em;padding:0.3em;">
+        <h5>Blog Posts</h5>
+        <a asp-page="Details" style="border-radius:2px;"><img src="~/images/portfolio/thumb/item4.jpg" class="w-100 h-100" /></a>
+    </div>
+    <div class="element-item blog" data-category="blog" style="border:2px solid #008cba; border-radius: 5px; margin:0.3em;padding:0.3em;">
+        <h5>Blog Categories</h5>
+        <a asp-page="Details" style="border-radius:2px;"><img src="~/images/portfolio/thumb/item5.jpg" class="w-100 h-100" /></a>
+    </div>
+    <div class="element-item blog" data-category="blog" style="border:2px solid #008cba; border-radius: 5px; margin:0.3em;padding:0.3em;">
+        <h5>Blog Tags</h5>
+        <a asp-page="Details" style="border-radius:2px;"><img src="~/images/portfolio/thumb/item5.jpg" class="w-100 h-100" /></a>
+    </div>
+    <div class="element-item stores" data-category="stores" style="border:2px solid #008cba; border-radius: 5px; margin:0.3em;padding:0.3em;">
+        <h5>Stores</h5>
+        <a asp-page="Details" style="border-radius:2px;"><img src="~/images/portfolio/thumb/item6.jpg" class="w-100 h-100" /></a>
+    </div>
+    <div class="element-item users" data-category="users" style="border:2px solid #008cba; border-radius: 5px; margin:0.3em;padding:0.3em;">
+        <h5>Users</h5>
+        <a asp-page="Details" style="border-radius:2px;"><img src="~/images/portfolio/thumb/item2.jpg" class="w-100 h-100" /></a>
+    </div>
+    <div class="element-item users" data-category="users" style="border:2px solid #008cba; border-radius: 5px; margin:0.3em;padding:0.3em;">
+        <h5>Roles</h5>
+        <a asp-page="Details" style="border-radius:2px;"><img src="~/images/portfolio/thumb/item4.jpg" class="w-100 h-100" /></a>
+    </div>
+</div>
+
+
+@*
+    <ul class="portfolio-filter">
+        <li><a class="btn btn-default active" href="#" data-filter="*">Manage All</a></li>
+        <li><a class="btn btn-default" href="#" data-filter=".deals">Manage Deals</a></li>
+        <li><a class="btn btn-default" href="#" data-filter=".stores">Manage Stores</a></li>
+        <li><a class="btn btn-default" href="#" data-filter=".blog">Manage Blog Posts</a></li>
+        <li><a class="btn btn-default" href="#" data-filter=".users">Manage Users and Roles</a></li>
+    </ul><!--/#portfolio-filter-->
+
+    <div class="portfolio-items">
+        <div class="row">
+            <div class="col deals" style="border:2px solid #008cba; border-radius: 5px; margin:0.5em;padding:0.5em;">
+                <img src="~/images/portfolio/thumb/item1.jpg" class="card-img-top p-2 rounded" />
+                <a asp-page="Details" class="btn btn-primary" style="border-radius:2px;">Deals</a>
+            </div>
+            <div class="col deals" style="border:2px solid #008cba; border-radius: 5px; margin:0.5em;padding:0.5em;">
+                <img src="~/images/portfolio/thumb/item3.jpg" class="card-img-top p-2 rounded" />
+                <a asp-page="Details" class="btn btn-primary" style="border-radius:2px;">Deal Categories</a>
+            </div>
+            <div class="col blog" style="border:2px solid #008cba; border-radius: 5px; margin:0.5em;padding:0.5em;">
+                <img src="~/images/portfolio/thumb/item6.jpg" class="card-img-top p-2 rounded" />
+                <a asp-page="Details" class="btn btn-primary" style="border-radius:2px;">Blog Posts</a>
+            </div>
+            <div class="col blog" style="border:2px solid #008cba; border-radius: 5px; margin:0.5em;padding:0.5em;">
+                <img src="~/images/portfolio/thumb/item6.jpg" class="card-img-top p-2 rounded" />
+                <a asp-page="Details" class="btn btn-primary" style="border-radius:2px;">Blog Categories</a>
+            </div>
+            <div class="col stores" style="border:2px solid #008cba; border-radius: 5px; margin:0.5em;padding:0.5em;">
+                <img src="~/images/portfolio/thumb/item6.jpg" class="card-img-top p-2 rounded" />
+                <a asp-page="Details" class="btn btn-primary" style="border-radius:2px;">Stores</a>
+            </div>
+            <div class="col stores" style="border:2px solid #008cba; border-radius: 5px; margin:0.5em;padding:0.5em;">
+                <img src="~/images/portfolio/thumb/item6.jpg" class="card-img-top p-2 rounded" />
+                <a asp-page="Details" class="btn btn-primary" style="border-radius:2px;">Users</a>
+            </div>
+            <div class="col users" style="border:2px solid #008cba; border-radius: 5px; margin:0.5em;padding:0.5em;">
+                <img src="~/images/portfolio/thumb/item6.jpg" class="card-img-top p-2 rounded" />
+                <a asp-page="Details" class="btn btn-primary" style="border-radius:2px;">Roles</a>
+            </div>
+            <div class="col users" style="border:2px solid #008cba; border-radius: 5px; margin:0.5em;padding:0.5em;">
+                <img src="~/images/portfolio/thumb/item6.jpg" class="card-img-top p-2 rounded" />
+                <a asp-page="Details" class="btn btn-primary" style="border-radius:2px;">Roles</a>
             </div>
         </div>
-    </li><!--/.portfolio-item-->
-    <li class="portfolio-item deals">
-        <div class="item-inner">
-            <img src="images/portfolio/thumb/item5.jpg" alt="">
-            <h5>Coupons</h5>
-            <div class="overlay">
-                <a class="preview btn btn-danger" href="images/portfolio/full/item5.jpg" rel="prettyPhoto"><i class="icon-eye-open"></i></a>
+    </div>
+    <ul class="portfolio-items list-group list-group-horizontal flex-sm-row" style="text-align: center;">
+            <li class="list-item col-sm-3 deals" style="border:2px solid #008cba; border-radius: 5px; margin:0.5em;padding:0.5em">
+                <img src="~/images/portfolio/thumb/item1.jpg" class="card-img-top p-2 rounded" />
+                <a asp-page="Details" class="btn btn-primary" style="border-radius:2px;">Deals</a>
+            </li>
+            <li class="list-item col-sm-3 deals" style="border:2px solid #008cba; border-radius: 5px; margin:0.5em;padding:0.5em">
+                <img src="~/images/portfolio/thumb/item3.jpg" class="card-img-top p-2 rounded" />
+                <a asp-page="Details" class="btn btn-primary" style="border-radius:2px;">Deal Categories</a>
+            </li>
+            <li class="list-item col-sm-3 posts" style="border:2px solid #008cba; border-radius: 5px; margin:0.5em;padding:0.5em">
+                <img src="~/images/portfolio/thumb/item6.jpg" class="card-img-top p-2 rounded" />
+                <a asp-page="Details" class="btn btn-primary" style="border-radius:2px;">Blog Posts</a>
+            </li>
+            <li class="list-item col-sm-3 posts" style="border:2px solid #008cba; border-radius: 5px; margin:0.5em;padding:0.5em">
+                <img src="~/images/portfolio/thumb/item6.jpg" class="card-img-top p-2 rounded" />
+                <a asp-page="Details" class="btn btn-primary" style="border-radius:2px;">Blog Categories</a>
+            </li>
+            <li class="list-item col-sm-3 stores" style="border:2px solid #008cba; border-radius: 5px; margin:0.5em;padding:0.5em">
+                <img src="~/images/portfolio/thumb/item6.jpg" class="card-img-top p-2 rounded" />
+                <a asp-page="Details" class="btn btn-primary" style="border-radius:2px;">Stores</a>
+            </li>
+            <li class="list-item col-sm-3 users" style="border:2px solid #008cba; border-radius: 5px; margin:0.5em;padding:0.5em">
+                <img src="~/images/portfolio/thumb/item6.jpg" class="card-img-top p-2 rounded" />
+                <a asp-page="Details" class="btn btn-primary" style="border-radius:2px;">Users</a>
+            </li>
+            <li class="list-item col-sm-3 users" style="border:2px solid #008cba; border-radius: 5px; margin:0.5em;padding:0.5em">
+                <img src="~/images/portfolio/thumb/item6.jpg" class="card-img-top p-2 rounded" />
+                <a asp-page="Details" class="btn btn-primary" style="border-radius:2px;">Roles</a>
+            </li>
+        </ul>*@
+
+@*<ul class="portfolio-items col-3">
+        <li class="portfolio-item deals">
+            <div class="item-inner">
+                <img src="images/portfolio/thumb/item5.jpg" alt="">
+                <h5>Deals</h5>
+                <div class="overlay">
+                    <a href="/Admin/Deals"><i class="icon-eye-open"></i><img src="~/images/portfolio/thumb/item5.jpg" alt="Deals" /></a>
+                </div>
             </div>
-        </div>
-    </li><!--/.portfolio-item-->
-    <li class="portfolio-item deals">
-        <div class="item-inner">
-            <img src="~/images/portfolio/thumb/item3.jpg" alt="">
-            <h5>Deal Categories</h5>
-            <div class="overlay">
-                <a href="/Admin/DealCategories"><i class="icon-eye-open"></i><img src="~/images/portfolio/thumb/item3.jpg" alt="Deal Categories" /></a>
+        </li>/.portfolio-item
+        <li class="portfolio-item deals">
+            <div class="item-inner">
+                <img src="images/portfolio/thumb/item5.jpg" alt="">
+                <h5>Coupons</h5>
+                <div class="overlay">
+                    <a class="preview btn btn-danger" href="images/portfolio/full/item5.jpg" rel="prettyPhoto"><i class="icon-eye-open"></i></a>
+                </div>
             </div>
-        </div>
-    </li><!--/.portfolio-item-->
-    <li class="portfolio-item deals">
-        <div class="item-inner">
-            <img src="images/portfolio/thumb/item5.jpg" alt="">
-            <h5>Deal Tags</h5>
-            <div class="overlay">
-                <a class="preview btn btn-danger" href="images/portfolio/full/item5.jpg" rel="prettyPhoto"><i class="icon-eye-open"></i></a>
+        </li>/.portfolio-item
+        <li class="portfolio-item deals">
+            <div class="item-inner">
+                <img src="~/images/portfolio/thumb/item3.jpg" alt="">
+                <h5>Deal Categories</h5>
+                <div class="overlay">
+                    <a href="/Admin/DealCategories"><i class="icon-eye-open"></i><img src="~/images/portfolio/thumb/item3.jpg" alt="Deal Categories" /></a>
+                </div>
             </div>
-        </div>
-    </li><!--/.portfolio-item-->
-    <li class="portfolio-item stores">
-        <div class="item-inner">
-            <img src="images/portfolio/thumb/item6.jpg" alt="">
-            <h5>Stores</h5>
-            <div class="overlay">
-                <a class="preview btn btn-danger" href="images/portfolio/full/item6.jpg" rel="prettyPhoto"><i class="icon-eye-open"></i></a>
+        </li>/.portfolio-item
+        <li class="portfolio-item deals">
+            <div class="item-inner">
+                <img src="images/portfolio/thumb/item5.jpg" alt="">
+                <h5>Deal Tags</h5>
+                <div class="overlay">
+                    <a class="preview btn btn-danger" href="images/portfolio/full/item5.jpg" rel="prettyPhoto"><i class="icon-eye-open"></i></a>
+                </div>
             </div>
-        </div>
-    </li><!--/.portfolio-item-->
-    <li class="portfolio-item stores">
-        <div class="item-inner">
-            <img src="images/portfolio/thumb/item6.jpg" alt="">
-            <h5>Affiliate Stores</h5>
-            <div class="overlay">
-                <a class="preview btn btn-danger" href="images/portfolio/full/item6.jpg" rel="prettyPhoto"><i class="icon-eye-open"></i></a>
+        </li>/.portfolio-item
+        <li class="portfolio-item stores">
+            <div class="item-inner">
+                <img src="images/portfolio/thumb/item6.jpg" alt="">
+                <h5>Stores</h5>
+                <div class="overlay">
+                    <a class="preview btn btn-danger" href="images/portfolio/full/item6.jpg" rel="prettyPhoto"><i class="icon-eye-open"></i></a>
+                </div>
             </div>
-        </div>
-    </li><!--/.portfolio-item-->
-    <li class="portfolio-item posts">
-        <div class="item-inner">
-            <img src="~/images/portfolio/thumb/item3.jpg" alt="">
-            <h5>Blog Posts</h5>
-            <div class="overlay">
-                <a href="/Admin/Blog"><i class="icon-eye-open"></i><img src="~/images/portfolio/thumb/item3.jpg" alt="Manage Blog Posts" /></a>
+        </li>/.portfolio-item
+        <li class="portfolio-item stores">
+            <div class="item-inner">
+                <img src="images/portfolio/thumb/item6.jpg" alt="">
+                <h5>Affiliate Stores</h5>
+                <div class="overlay">
+                    <a class="preview btn btn-danger" href="images/portfolio/full/item6.jpg" rel="prettyPhoto"><i class="icon-eye-open"></i></a>
+                </div>
             </div>
-        </div>
-    </li><!--/.portfolio-item-->
-    <li class="portfolio-item users">
-        <div class="item-inner">
-            <img src="~/images/portfolio/thumb/item3.jpg" alt="">
-            <h5>Users</h5>
-            <div class="overlay">
-                <a href="/Admin/Users"><i class="icon-eye-open"></i><img src="~/images/portfolio/thumb/item3.jpg" alt="Manage Users" /></a>
+        </li>/.portfolio-item
+        <li class="portfolio-item posts">
+            <div class="item-inner">
+                <img src="~/images/portfolio/thumb/item3.jpg" alt="">
+                <h5>Blog Posts</h5>
+                <div class="overlay">
+                    <a href="/Admin/Blog"><i class="icon-eye-open"></i><img src="~/images/portfolio/thumb/item3.jpg" alt="Manage Blog Posts" /></a>
+                </div>
             </div>
-        </div>
-    </li><!--/.portfolio-item-->
-    <li class="portfolio-item users">
-        <div class="item-inner">
-            <img src="~/images/portfolio/thumb/item3.jpg" alt="">
-            <h5>Roles</h5>
-            <div class="overlay">
-                <a href="/Admin/Roles"><i class="icon-eye-open"></i><img src="~/images/portfolio/thumb/item3.jpg" alt="Manage Roles" /></a>
+        </li>/.portfolio-item
+        <li class="portfolio-item users">
+            <div class="item-inner">
+                <img src="~/images/portfolio/thumb/item3.jpg" alt="">
+                <h5>Users</h5>
+                <div class="overlay">
+                    <a href="/Admin/Users"><i class="icon-eye-open"></i><img src="~/images/portfolio/thumb/item3.jpg" alt="Manage Users" /></a>
+                </div>
             </div>
-        </div>
-    </li><!--/.portfolio-item-->
-</ul>
+        </li>/.portfolio-item
+        <li class="portfolio-item users">
+            <div class="item-inner">
+                <img src="~/images/portfolio/thumb/item3.jpg" alt="">
+                <h5>Roles</h5>
+                <div class="overlay">
+                    <a href="/Admin/Roles"><i class="icon-eye-open"></i><img src="~/images/portfolio/thumb/item3.jpg" alt="Manage Roles" /></a>
+                </div>
+            </div>
+        </li>/.portfolio-item
+    </ul>*@
